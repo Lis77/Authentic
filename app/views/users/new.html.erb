@@ -12,10 +12,7 @@
 <%= f.password_field :password %>
 <br><br>
 
-<div class='field'>
-    <%= i.label :last_signed_in_at, 'Last signed in at:' %>
-    <%= i.date_select(:last_signed_in_at, order:[:hours,:day,:month, :year]) %>
-</div>
+
 
 <%= f.submit %>
 

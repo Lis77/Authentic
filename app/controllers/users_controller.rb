@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	end
 
 
+
 	def create
 		@user = User.new(user_params)
 		if @user.save
@@ -14,8 +15,14 @@ class UsersController < ApplicationController
 		end
 	end
 
-	private
-  def user_params
+	def update
+		@last_signed_in_at = Time.new(user_params)
+		 @last_signed_in_at.save
+		 redirect_to root_path
+	end
+
+  private
+  	def user_params
   	params.require(:user).permit(:name, :email, :password)
-  end
+  	end
 end

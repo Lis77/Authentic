@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
 	   redirect_to root_path, notice: 'You are signed in!'
    else
     redirect_to new_session_path, notice: 'Invalid!'
+	end
 end
 
 def destroy
