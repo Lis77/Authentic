@@ -8,6 +8,15 @@
 </head>
 <body>
 
+	<h3><%= flash[:notice] %></h3>
+	<h3>Current User:<%= current_user.inspect %></h3>
+
+   
+	<p> Enter: <%= link_to 'Sign In', new_session_path %> 
+		   &nbsp; Exit: <%= link_to 'Sign Out', sign_out_path, method: :delete %>
+    </p>
+     <% else %> 
+	
 <%= yield %>
 
 </body>
